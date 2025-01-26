@@ -127,11 +127,8 @@ try:
     previous_data = read_data_from_file(file_path)
 
     if combined_data != previous_data:
-        print("Зміни в доступних датах або слотах знайдено. Оновлення файлу...")
         write_data_to_file(file_path, combined_data)
         send_telegram_message(combined_data)
-    else:
-        print("Ніяких змін у доступних датах або слотах.")
 
 finally:
     # Закриваємо браузер
