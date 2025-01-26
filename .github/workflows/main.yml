@@ -9,6 +9,9 @@ jobs:
   selenium-tests:
     runs-on: windows-latest  # Вибір Windows-образу
     steps:
+      - name: Set environment to UTF-8
+        run: |
+          $env:PYTHONIOENCODING="utf-8"
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install dependencies
