@@ -1,0 +1,20 @@
+name: Run Selenium Tests Every 30 Minutes
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"  # Запуск кожні 30 хвилин
+
+jobs:
+  selenium-tests:
+    runs-on: windows-latest  # Вибір Windows-образу
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          choco install python
+          pip install selenium
+          choco install chromedriver
+          pip install telebot
+      - name: Run Selenium Tests
+        run: python main.py
