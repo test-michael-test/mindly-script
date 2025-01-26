@@ -3,6 +3,7 @@ name: Run Selenium Tests Every 30 Minutes
 on:
   schedule:
     - cron: "*/30 * * * *"  # Запуск кожні 30 хвилин
+  workflow_dispatch:  # Додаємо можливість запуску вручну
 
 jobs:
   selenium-tests:
