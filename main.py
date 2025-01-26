@@ -6,7 +6,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import os
+import sys
+import io
 import telebot
+
+# Встановлюємо кодування для виведення на консоль
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 
 # Telegram bot setup
 bot_token = "7835773967:AAF_wU4W3QVmKnqAOtxvpnPFM2RmODzkE4c"
